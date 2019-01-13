@@ -1,32 +1,11 @@
-#include <SFML/Window.hpp>
-#include <SFML/Graphics.hpp>
+#include "lib/SFML-2.5.1/include/SFML/Graphics.hpp"
 #include <iostream>
-#include <Windows.h>
-
-using namespace std;
+#include "Board.h"
 
 int main()
 {
     sf::RenderWindow window(sf::VideoMode(1366, 720), "Gdzie jest widelec");
 
-//=================================T£O================================================//
-    sf::Texture texture;
-    if (!texture.loadFromFile("img/dupa.png"))
-    {
-
-    }
-
-    sf::Sprite background[34][9];
-    for (int i = 0; i<9;++i)
-    {
-        for (int j = 0; j<34; ++j)
-        {
-            background[i][j].setTexture(texture);
-        }
-    }
-
-
-//=================================RUDY===============================================//
     sf::Texture rudys;
     if (!rudys.loadFromFile("rudy.png"))
     {
@@ -48,31 +27,13 @@ int main()
         rudy.setPosition(sf::Vector2f(1366/2.0f,720/2.0f));
         sf::Vector2f scale = rudy.getScale();
         rudy.setScale(sf::Vector2f(0.5f, 0.5f));
-
-//=================================WYŒWIETLANIE==========================================//
-
-        for (int i = 0; i<9; ++i)
+        for(;;)
         {
-            for (int j = 0; j<34; ++j)
-            {
-                if(j%2==0)
-                {
-                    background[i][j].setScale(sf::Vector2f(0.25f, 0.25f));
-                    background[i][j].setPosition(i*80, j*25);
-                    window.draw(background[i][j]);
-                }
-                else
-                {
-                    background[i][j].setScale(sf::Vector2f(0.25f, 0.25f));
-                    background[i][j].setPosition(40+(i*80), j*25);
-                    window.draw(background[i][j]);
-                }
-
-            }
+            window.clear(sf::Color(0, 0, 0, 255));
+            rudy.rotate(0.1);
+            window.draw(rudy);
+            window.display();
         }
-
-        //window.draw(rudy);
-        window.display();
         window.clear();
     }
     return 0;
