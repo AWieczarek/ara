@@ -3,10 +3,7 @@
 
 int main()
 {
-    Window w;
-    Background b;
-    Rudy r;
-    w.GameLoop();
-
+    Game g;
+    g.GameLoop();
     return 0;
 }

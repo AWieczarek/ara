@@ -1,12 +1,6 @@
 #include "lib/SFML-2.5.1/include/SFML/Graphics.hpp"
 #include "lib/SFML-2.5.1/include/SFML/Window.hpp"
-
-class Window
-{
-public:
-    sf::RenderWindow window;
-    void GameLoop();
-};
+#include <iostream>
 
 class Pole:public sf::Sprite{
 
@@ -16,22 +10,19 @@ public:
 
 };
 
-class Background : public Window
+class Game
 {
     public:
+    sf::RenderWindow window;
     sf::Texture Field;
     sf::Sprite fields[17][34];
-    Background();
-    void start();
-    void draw();
-};
-
-class Rudy : public Window
-{
-    public:
     sf::Texture rudys;
     sf::Sprite rudy;
-    Rudy();
-    void start();
-    void draw();
+    void Background();
+    void start_B();
+    void Rudy();
+    void start_Rudy();
+    void Window();
+    void GameLoop();
+
 };

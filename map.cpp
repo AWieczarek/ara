@@ -1,23 +1,7 @@
 #include "map.h"
 
-void Window::GameLoop()
-{
-    window.setTitle("SFML window");
-    window.setSize(sf::Vector2u(1366, 720));
-    while (window.isOpen())
-    {
-        sf::Event event;
-        while (window.pollEvent(event))
-        {
-            if (event.type == sf::Event::Closed)
-                window.close();
-        }
-        window.display();
-        window.clear();
-    }
-}
 
-Background::Background()
+void Game::Background()
 {
     if (!Field.loadFromFile("img/dupa.png"))
     {
@@ -25,7 +9,7 @@ Background::Background()
     }
 }
 
-void Background::start()
+void Game::start_B()
 {
     for (int i = 0; i<17;++i)
     {
@@ -69,26 +53,16 @@ void Background::start()
         }
     }
 }
-void Background::draw()
-{
-    for (int i = 0; i<17; ++i)
-    {
-        for (int j = 0; j<33; ++j)
-        {
-            window.draw(fields[i][j]);
-        }
-    }
-}
 
-Rudy::Rudy()
+void Game::Rudy()
 {
     if (!rudys.loadFromFile("img/rudy.png"))
     {
-        // error...
+
     }
 }
 
-void Rudy::start()
+void Game::start_Rudy()
 {
     rudy.setTexture(rudys);
     rudy.setOrigin(250, 297);
@@ -97,7 +71,39 @@ void Rudy::start()
     rudy.setScale(sf::Vector2f(0.5f, 0.5f));
 }
 
-void Rudy::draw()
+
+void Game::Window()
 {
-    window.draw(rudy);
+     window.create(sf::VideoMode(1366, 720), "My window");
 }
+void Game::GameLoop()
+{
+    Window();
+    Background();
+    start_B();
+    Rudy();
+    start_Rudy();
+
+    while (window.isOpen())
+    {
+        sf::Event event;
+        while (window.pollEvent(event))
+        {
+            if (event.type == sf::Event::Closed)
+                window.close();
+        }
+
+        for (int i = 0; i<17; ++i)
+        {
+            for (int j = 0; j<33; ++j)
+            {
+                window.draw(fields[i][j]);
+            }
+        }
+        window.draw(rudy);
+
+        window.display();
+        //window.clear(sf::Color(200, 0, 0));
+    }
+}
+

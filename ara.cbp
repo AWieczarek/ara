@@ -46,7 +46,10 @@
 			<Add directory="lib/SFML-2.5.1/lib" />
 		</Linker>
 		<Unit filename="Figures.h" />
+		<Unit filename="Header.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="map.cpp" />
+		<Unit filename="map.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />
