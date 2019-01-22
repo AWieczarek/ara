@@ -27,9 +27,10 @@ int saveChosing(){
 
 }
 
-int LoadSave(int save_number, Pole *fields) //0 -> dobrze, 1 -> cos sie powaznie zepsulo, 2 -> lekki blad
+int LoadSave(sf::Text xd, int save_number, Pole *fields) //0 -> dobrze, 1 -> cos sie powaznie zepsulo, 2 -> lekki blad
 {
     int board_size_y = 34;
+
     std::string names[8] = {"pawn", "ghost", "tower", "cav", "mystery", "charge", "king", "notexist"};
     int returning = 0;
 
@@ -87,6 +88,7 @@ int LoadSave(int save_number, Pole *fields) //0 -> dobrze, 1 -> cos sie powaznie
 
     std::fstream file;  // plik
     std::string line;
+
 
     if(save_number == 0)
     {

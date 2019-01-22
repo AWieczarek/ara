@@ -1247,12 +1247,14 @@
 	<SFML/Graphics/Drawable.hpp>
 	<SFML/Window/GlResource.hpp>
 
-1548093050 source:c:\users\adamw\documents\ara\main.cpp
+1548179352 source:c:\users\adamw\documents\ara\main.cpp
+	<sstream>
 	"Figures.h"
 	"Header.h"
 	"fields.h"
 	"mapRemoving.h"
 	<math.h>
+	"highlight.h"
 
 1547382637 c:\users\adamw\documents\ara\lib\sfml-2.5.1\include\sfml\graphics.hpp
 	<SFML/Window.hpp>
@@ -2081,10 +2083,10 @@
 1548173855 c:\users\kivi\documents\ara\figures.h
 	"Load_From_File.h"
 
-1548090551 c:\users\adamw\documents\ara\figures.h
+1548177110 c:\users\adamw\documents\ara\figures.h
 	"Load_From_File.h"
 
-1548092032 c:\users\adamw\documents\ara\header.h
+1548187388 c:\users\adamw\documents\ara\header.h
 	<math.h>
 
 1547860151 source:c:\users\pawe³\dane z pulpitu\programowanie\github\ara\main.cpp
@@ -2521,19 +2523,19 @@
 	<iostream>
 	<windows.h>
 
-1548090551 c:\users\adamw\documents\ara\load_from_file.h
+1548187317 c:\users\adamw\documents\ara\load_from_file.h
 	"pole.h"
 	<fstream>
 	<cstdlib>
 	<string>
 
-1548090552 c:\users\adamw\documents\ara\pole.h
+1548174993 c:\users\adamw\documents\ara\pole.h
 	"lib/SFML-2.5.1/include/SFML/Graphics.hpp"
 	"lib/SFML-2.5.1/include/SFML/Window.hpp"
 	"lib/SFML-2.5.1/include/SFML/Audio.hpp"
 	"messages.h"
 
-1548090569 c:\users\adamw\documents\ara\messages.h
+1548187295 c:\users\adamw\documents\ara\messages.h
 	<iostream>
 
 1548111226 c:\users\kivi\documents\ara\load_from_file.h
@@ -2771,9 +2773,11 @@
 	<SFML/Audio/Export.hpp>
 	<string>
 
-1548093076 c:\users\adamw\documents\ara\fields.h
+1548177110 c:\users\adamw\documents\ara\fields.h
 
 1548090552 c:\users\adamw\documents\ara\mapremoving.h
 
 1548166577 c:\users\kivi\documents\ara\highlight.h
+
+1548174993 c:\users\adamw\documents\ara\highlight.h
 

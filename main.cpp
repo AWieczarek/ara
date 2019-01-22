@@ -21,6 +21,8 @@ int main()
     sf::Clock minutes;
     sf::Clock seconds;
     sf::Music music;
+    std::ostringstream xd1;
+    sf::Text xd;
     if (!music.openFromFile("sounds\\music.wav"))ms_error(24, "nie zaladowano music.wav");
     music.setVolume(10.f);
     music.play();
@@ -57,7 +59,11 @@ int main()
     }
 
 
-    loadTexture();
+
+
+
+
+    loadTexture(xd);
 
     backgroundFields();
 
@@ -67,7 +73,7 @@ int main()
     klik.setTexture(Background);
     klik.setColor(sf::Color::Red);
 
-    LoadSave(saveChosing(), front_fields);
+    LoadSave(xd, saveChosing(), front_fields);
     //std::cout<<tura<<"\n";
     frontFields();
 
@@ -123,6 +129,8 @@ int main()
 
 
 //=========================Znikanie mapy=====================================//
+
+
 
         if(oldTura+coIleTurMaSieZapadac-1<nrTura){
             //std::cout<<nrZmiany<<"\n";
@@ -413,6 +421,12 @@ int main()
 
 
 
+        xd.setPosition(sf::Vector2f(625, 325));
+        xd.setFont(font);
+        xd.setCharacterSize(20);
+        xd.setStyle(sf::Text::Regular);
+
+
         sf::Text clock;
         clock.setPosition(sf::Vector2f(625, 325));
         clock.setFont(font);
@@ -430,9 +444,9 @@ int main()
         turn.setCharacterSize(20);
         turn.setStyle(sf::Text::Regular);
         turn.setString(ss1.str());
-
          if(int(time)>59)
         {
+
             seconds.restart();
         }
         if(minute!=0&&minute%3==0&&time%34==0)music.play();
@@ -459,6 +473,7 @@ int main()
         if(isSaving)window.draw(Save);
         Kursor.setPosition(static_cast<sf::Vector2f>(sf::Mouse::getPosition(window)));
         window.draw(Kursor);
+        window.draw(xd);
         window.display();
         window.clear();
 
